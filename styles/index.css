@@ -1,0 +1,13 @@
+/* Main CSS file that imports all other CSS files */
+
+/* Base styles */
+@import url('main.css');
+@import url('ui.css');
+
+/* Card styles */
+@import url('cards/base.css');
+
+/* Faction styles */
+@import url('factions/sikh.css');
+@import url('factions/british.css');
+@import url('factions/mughal.css');

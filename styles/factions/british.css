@@ -1,0 +1,762 @@
+/* British Empire Card Styles */
+
+.british-faction {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cpath fill='%238B0000' d='M0 0 H200 V200 H0 Z'/%3E%3Cpath fill='%23FFFFFF' d='M0 0 H200 V200 H0 Z M0 80 H200 V120 H0 Z M80 0 V200 H120 V0 Z'/%3E%3Cpath fill='%238B0000' d='M80 80 H120 V120 H80 Z'/%3E%3Cpath fill='%23003366' d='M0 0 H80 V80 H0 Z M120 0 H200 V80 H120 Z M0 120 H80 V200 H0 Z M120 120 H200 V200 H120 Z'/%3E%3Cpath fill='%23FFFFFF' d='M0 0 L80 80 M120 0 L200 80 M0 200 L80 120 M120 200 L200 120'/%3E%3Cpath fill='%23FF0000' d='M90 0 H110 V200 H90 Z M0 90 H200 V110 H0 Z'/%3E%3C/svg%3E");
+}
+
+.british-warrior-image {
+    background-color: #f8f8f8;
+    background-image: linear-gradient(to bottom, #ffffff, #e0e8f0);
+}
+
+.british-weapon-image {
+    background-color: #f8f8f8;
+    background-image: linear-gradient(to bottom, #ffffff, #e0e8f0);
+}
+
+/* Rifleman */
+.rifleman-image {
+    position: relative;
+    height: 100%;
+}
+
+.rifleman-image .hat {
+    width: 35px;
+    height: 15px;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000033;
+    border-radius: 5px 5px 0 0;
+    z-index: 2;
+}
+
+.rifleman-image .face {
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f5d0a9;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.rifleman-image .body {
+    width: 30px;
+    height: 40px;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #8b0000;
+    border-radius: 5px;
+}
+
+.rifleman-image .rifle {
+    width: 5px;
+    height: 60px;
+    position: absolute;
+    top: 30px;
+    left: 30%;
+    background-color: #8b4513;
+    transform: rotate(-10deg);
+    z-index: 3;
+}
+
+/* Officer */
+.officer-image {
+    position: relative;
+    height: 100%;
+}
+
+.officer-image .hat {
+    width: 40px;
+    height: 15px;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000033;
+    border-radius: 5px 5px 0 0;
+    z-index: 2;
+}
+
+.officer-image .hat::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 10px;
+    background-color: #ffffff;
+    border-radius: 10px 10px 0 0;
+}
+
+.officer-image .face {
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f5d0a9;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.officer-image .body {
+    width: 35px;
+    height: 45px;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #8b0000;
+    border-radius: 5px;
+}
+
+.officer-image .sword {
+    width: 5px;
+    height: 40px;
+    position: absolute;
+    top: 40px;
+    left: 70%;
+    background-color: #c0c0c0;
+    transform: rotate(30deg);
+    z-index: 3;
+}
+
+/* Grenadier */
+.grenadier-image {
+    position: relative;
+    height: 100%;
+}
+
+.grenadier-image .hat {
+    width: 30px;
+    height: 25px;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000033;
+    border-radius: 0;
+    z-index: 2;
+}
+
+.grenadier-image .face {
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f5d0a9;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.grenadier-image .body {
+    width: 30px;
+    height: 40px;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #8b0000;
+    border-radius: 5px;
+}
+
+.grenadier-image .grenade {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 40px;
+    right: 25%;
+    background-color: #000000;
+    border-radius: 50%;
+    z-index: 3;
+}
+
+/* Highlander */
+.highlander-image {
+    position: relative;
+    height: 100%;
+}
+
+.highlander-image .hat {
+    width: 35px;
+    height: 15px;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000033;
+    border-radius: 5px 5px 0 0;
+    z-index: 2;
+}
+
+.highlander-image .hat::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: #ff0000;
+    border-radius: 50%;
+}
+
+.highlander-image .face {
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f5d0a9;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.highlander-image .kilt {
+    width: 35px;
+    height: 30px;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #006400;
+    background-image: 
+        linear-gradient(90deg, transparent 50%, rgba(255,255,255,.5) 50%),
+        linear-gradient(transparent 50%, rgba(255,255,255,.5) 50%);
+    background-size: 10px 10px;
+    border-radius: 5px 5px 0 0;
+}
+
+.highlander-image .legs {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.highlander-image .legs::before,
+.highlander-image .legs::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 20px;
+    background-color: #f5d0a9;
+}
+
+.highlander-image .legs::before {
+    left: 0;
+}
+
+.highlander-image .legs::after {
+    right: 0;
+}
+
+/* Dragoon */
+.dragoon-image {
+    position: relative;
+    height: 100%;
+}
+
+.dragoon-image .horse {
+    width: 60px;
+    height: 40px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #8b4513;
+    border-radius: 10px;
+}
+
+.dragoon-image .rider {
+    width: 25px;
+    height: 30px;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #8b0000;
+    border-radius: 5px 5px 0 0;
+}
+
+.dragoon-image .hat {
+    width: 25px;
+    height: 10px;
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000033;
+    border-radius: 5px 5px 0 0;
+}
+
+.dragoon-image .face {
+    width: 18px;
+    height: 15px;
+    position: absolute;
+    bottom: 55px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f5d0a9;
+    border-radius: 5px;
+}
+
+.dragoon-image .sword {
+    width: 4px;
+    height: 30px;
+    position: absolute;
+    bottom: 40px;
+    right: 30%;
+    background-color: #c0c0c0;
+    transform: rotate(30deg);
+    z-index: 3;
+}
+
+/* General */
+.general-image {
+    position: relative;
+    height: 100%;
+}
+
+.general-image .hat {
+    width: 45px;
+    height: 20px;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000033;
+    border-radius: 5px 5px 0 0;
+    z-index: 2;
+}
+
+.general-image .hat::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 10px;
+    background-color: #ffffff;
+    border-radius: 10px 10px 0 0;
+}
+
+.general-image .face {
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f5d0a9;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.general-image .body {
+    width: 40px;
+    height: 50px;
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff0000;
+    border-radius: 5px;
+}
+
+.general-image .sword {
+    width: 5px;
+    height: 45px;
+    position: absolute;
+    top: 50px;
+    left: 70%;
+    background-color: #c0c0c0;
+    transform: rotate(30deg);
+    z-index: 3;
+}
+
+/* Guardsman */
+.guardsman-image {
+    position: relative;
+    height: 100%;
+}
+
+.guardsman-image .hat {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000000;
+    border-radius: 0;
+    z-index: 2;
+}
+
+.guardsman-image .face {
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f5d0a9;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.guardsman-image .body {
+    width: 35px;
+    height: 45px;
+    position: absolute;
+    top: 55px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff0000;
+    border-radius: 0;
+}
+
+.guardsman-image .rifle {
+    width: 5px;
+    height: 70px;
+    position: absolute;
+    top: 30px;
+    left: 30%;
+    background-color: #8b4513;
+    z-index: 3;
+}
+
+/* Sergeant */
+.sergeant-image {
+    position: relative;
+    height: 100%;
+}
+
+.sergeant-image .hat {
+    width: 35px;
+    height: 15px;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000033;
+    border-radius: 5px 5px 0 0;
+    z-index: 2;
+}
+
+.sergeant-image .face {
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f5d0a9;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.sergeant-image .body {
+    width: 35px;
+    height: 45px;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #8b0000;
+    border-radius: 5px;
+}
+
+.sergeant-image .baton {
+    width: 5px;
+    height: 25px;
+    position: absolute;
+    top: 50px;
+    left: 70%;
+    background-color: #8b4513;
+    transform: rotate(45deg);
+    z-index: 3;
+}
+
+/* Scout */
+.scout-image {
+    position: relative;
+    height: 100%;
+}
+
+.scout-image .hat {
+    width: 30px;
+    height: 10px;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #8b4513;
+    border-radius: 10px 10px 0 0;
+    z-index: 2;
+}
+
+.scout-image .face {
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f5d0a9;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.scout-image .body {
+    width: 30px;
+    height: 40px;
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #556b2f;
+    border-radius: 5px;
+}
+
+.scout-image .rifle {
+    width: 4px;
+    height: 50px;
+    position: absolute;
+    top: 40px;
+    left: 30%;
+    background-color: #8b4513;
+    transform: rotate(-30deg);
+    z-index: 3;
+}
+
+/* Musket */
+.musket-image {
+    position: relative;
+    height: 100%;
+}
+
+.musket-image .barrel {
+    width: 60px;
+    height: 8px;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333333;
+    border-radius: 5px;
+}
+
+.musket-image .stock {
+    width: 30px;
+    height: 15px;
+    position: absolute;
+    top: 48px;
+    left: 35%;
+    background-color: #8b4513;
+    border-radius: 5px;
+}
+
+/* Saber */
+.saber-image {
+    position: relative;
+    height: 100%;
+}
+
+.saber-image .blade {
+    width: 50px;
+    height: 10px;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-25%) rotate(20deg);
+    background-color: #c0c0c0;
+    border-radius: 0 50% 0 0;
+}
+
+.saber-image .handle {
+    width: 15px;
+    height: 20px;
+    position: absolute;
+    top: 60px;
+    left: 30%;
+    background-color: #8b4513;
+    border-radius: 5px;
+}
+
+.saber-image .guard {
+    width: 20px;
+    height: 10px;
+    position: absolute;
+    top: 50px;
+    left: 27.5%;
+    background-color: #ffd700;
+    border-radius: 5px;
+}
+
+/* Bayonet */
+.bayonet-image {
+    position: relative;
+    height: 100%;
+}
+
+.bayonet-image .blade {
+    width: 8px;
+    height: 40px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #c0c0c0;
+}
+
+.bayonet-image .socket {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333333;
+    border-radius: 5px;
+}
+
+/* Cannon */
+.cannon-image {
+    position: relative;
+    height: 100%;
+}
+
+.cannon-image .barrel {
+    width: 50px;
+    height: 20px;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333333;
+    border-radius: 10px;
+}
+
+.cannon-image .wheels {
+    width: 60px;
+    height: 20px;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.cannon-image .wheels::before,
+.cannon-image .wheels::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #8b4513;
+    border-radius: 50%;
+}
+
+.cannon-image .wheels::before {
+    left: 0;
+}
+
+.cannon-image .wheels::after {
+    right: 0;
+}
+
+/* Pistol */
+.pistol-image {
+    position: relative;
+    height: 100%;
+}
+
+.pistol-image .barrel {
+    width: 30px;
+    height: 8px;
+    position: absolute;
+    top: 40px;
+    left: 60%;
+    background-color: #333333;
+    border-radius: 5px;
+}
+
+.pistol-image .handle {
+    width: 15px;
+    height: 25px;
+    position: absolute;
+    top: 48px;
+    left: 40%;
+    background-color: #8b4513;
+    border-radius: 5px;
+    transform: rotate(10deg);
+}
+
+/* Rifle */
+.rifle-image {
+    position: relative;
+    height: 100%;
+}
+
+.rifle-image .barrel {
+    width: 70px;
+    height: 6px;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333333;
+    border-radius: 3px;
+}
+
+.rifle-image .stock {
+    width: 35px;
+    height: 15px;
+    position: absolute;
+    top: 46px;
+    left: 35%;
+    background-color: #8b4513;
+    border-radius: 5px;
+}
+
+/* Lance */
+.lance-image {
+    position: relative;
+    height: 100%;
+}
+
+.lance-image .shaft {
+    width: 5px;
+    height: 80px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #8b4513;
+}
+
+.lance-image .head {
+    width: 15px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #c0c0c0;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}

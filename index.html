@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empire Warriors - Deck Building Game</title>
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+    <!-- Faction Selection Screen -->
+    <div id="faction-selection" class="faction-selection">
+        <div class="faction-header">
+            <h1>Choose Your Faction</h1>
+        </div>
+        
+        <div class="faction-options">
+            <div class="faction-section">
+                <h2>Your Faction</h2>
+                <div class="faction-grid">
+                    <div id="faction-sikh" class="faction-option selected" data-faction="sikh">
+                        <div class="faction-image sikh-faction"></div>
+                        <h3>Sikh Empire</h3>
+                        <p>Warriors of faith with unique weapons and cavalry.</p>
+                        <button class="view-deck-btn" data-faction="sikh">View Deck</button>
+                    </div>
+                    <div id="faction-british" class="faction-option" data-faction="british">
+                        <div class="faction-image british-faction"></div>
+                        <h3>British Empire</h3>
+                        <p>Colonial forces with advanced firearms and tactics.</p>
+                        <button class="view-deck-btn" data-faction="british">View Deck</button>
+                    </div>
+                    <div id="faction-mughal" class="faction-option" data-faction="mughal">
+                        <div class="faction-image mughal-faction"></div>
+                        <h3>Mughal Empire</h3>
+                        <p>Imperial warriors with ornate weapons and cavalry.</p>
+                        <button class="view-deck-btn" data-faction="mughal">View Deck</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faction-section">
+                <h2>Opponent Faction</h2>
+                <div class="faction-grid">
+                    <div id="opponent-sikh" class="opponent-option" data-faction="sikh">
+                        <div class="faction-image sikh-faction"></div>
+                        <h3>Sikh Empire</h3>
+                        <p>Warriors of faith with unique weapons and cavalry.</p>
+                        <button class="view-deck-btn" data-faction="sikh">View Deck</button>
+                    </div>
+                    <div id="opponent-british" class="opponent-option selected" data-faction="british">
+                        <div class="faction-image british-faction"></div>
+                        <h3>British Empire</h3>
+                        <p>Colonial forces with advanced firearms and tactics.</p>
+                        <button class="view-deck-btn" data-faction="british">View Deck</button>
+                    </div>
+                    <div id="opponent-mughal" class="opponent-option" data-faction="mughal">
+                        <div class="faction-image mughal-faction"></div>
+                        <h3>Mughal Empire</h3>
+                        <p>Imperial warriors with ornate weapons and cavalry.</p>
+                        <button class="view-deck-btn" data-faction="mughal">View Deck</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="faction-controls">
+            <button id="start-game" class="start-button">Start Game</button>
+        </div>
+        
+        <!-- Deck Preview Modals -->
+        <div id="sikh-deck-preview" class="deck-preview hidden">
+            <div class="deck-preview-content">
+                <span class="close-preview">&times;</span>
+                <h2>Sikh Empire Deck</h2>
+                <div class="deck-cards">
+                    <div class="deck-section">
+                        <h3>Warriors</h3>
+                        <div class="card-grid" id="sikh-warriors"></div>
+                    </div>
+                    <div class="deck-section">
+                        <h3>Weapons</h3>
+                        <div class="card-grid" id="sikh-weapons"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="british-deck-preview" class="deck-preview hidden">
+            <div class="deck-preview-content">
+                <span class="close-preview">&times;</span>
+                <h2>British Empire Deck</h2>
+                <div class="deck-cards">
+                    <div class="deck-section">
+                        <h3>Warriors</h3>
+                        <div class="card-grid" id="british-warriors"></div>
+                    </div>
+                    <div class="deck-section">
+                        <h3>Weapons</h3>
+                        <div class="card-grid" id="british-weapons"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="mughal-deck-preview" class="deck-preview hidden">
+            <div class="deck-preview-content">
+                <span class="close-preview">&times;</span>
+                <h2>Mughal Empire Deck</h2>
+                <div class="deck-cards">
+                    <div class="deck-section">
+                        <h3>Warriors</h3>
+                        <div class="card-grid" id="mughal-warriors"></div>
+                    </div>
+                    <div class="deck-section">
+                        <h3>Weapons</h3>
+                        <div class="card-grid" id="mughal-weapons"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Container -->
+    <div id="game-container" class="game-container">
+        <div class="header">
+            <h1>Empire Warriors</h1>
+            <div class="stats">
+                <div class="player-stats">
+                    <span>Energy: <span id="energy">5</span>/<span id="max-energy">5</span></span>
+                    <span>Deck: <span id="deck-count">0</span></span>
+                    <span>Discard: <span id="discard-count">0</span></span>
+                </div>
+                <div class="game-stats">
+                    <span>Turn: <span id="current-turn">1</span>/<span id="max-turns">10</span></span>
+                    <span class="score-display">Score: <span id="player-score">0</span> - <span id="opponent-score">0</span></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-area">
+            <div class="opponent-area">
+                <div class="area-header">
+                    <h3>Opponent's Field</h3>
+                    <div class="power-indicator">Power: <span id="opponent-power">0</span></div>
+                </div>
+                <div id="opponent-field" class="field"></div>
+            </div>
+            
+            <div class="middle-area">
+                <div class="area-header">
+                    <h3>Your Field</h3>
+                    <div class="power-indicator">Power: <span id="player-power">0</span></div>
+                </div>
+                <div id="player-field" class="field"></div>
+            </div>
+            
+            <div class="player-area">
+                <div id="player-hand" class="hand"></div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="end-turn">End Turn</button>
+            <button id="quit-game">Quit Game</button>
+            <button id="instructions">How to Play</button>
+        </div>
+    </div>
+    
+    <div id="card-preview" class="card-preview hidden"></div>
+    
+    <!-- Instructions Modal -->
+    <div id="instructions-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>How to Play Empire Warriors</h2>
+            
+            <div class="instructions-section">
+                <h3>Game Overview</h3>
+                <p>Empire Warriors is a deck building card game featuring warriors and weapons from three historical empires: Sikh, British, and Mughal. Build your forces, equip them with weapons, and defeat your opponent!</p>
+            </div>
+            
+            <div class="instructions-section">
+                <h3>Factions</h3>
+                <ul>
+                    <li><strong>Sikh Empire:</strong> Warriors of faith with unique weapons like the Chakkar and Khanda. Strong cavalry and elite warriors.</li>
+                    <li><strong>British Empire:</strong> Colonial forces with advanced firearms and disciplined infantry. Strong ranged capabilities.</li>
+                    <li><strong>Mughal Empire:</strong> Imperial warriors with ornate weapons and diverse troops. Strong administrative and tactical advantages.</li>
+                </ul>
+            </div>
+            
+            <div class="instructions-section">
+                <h3>Card Types</h3>
+                <ul>
+                    <li><strong>Warriors:</strong> Play these cards to your field. Each warrior has a power value:
+                        <ul>
+                            <li><strong>Nihang Singh:</strong> Elite Sikh warrior (Power: 3)</li>
+                            <li><strong>Akali Nihang:</strong> Fearless warrior of the Akali Nihang order (Power: 4)</li>
+                            <li><strong>Gatka Master:</strong> Expert in the Sikh martial art (Power: 2)</li>
+                            <li><strong>Panj Pyare:</strong> The Five Beloved Ones (Power: 6)</li>
+                            <li><strong>Sikh Cavalry:</strong> Mounted warrior (Power: 5)</li>
+                            <li><strong>Misal Sardar:</strong> Leader of a Sikh confederacy (Power: 4)</li>
+                            <li><strong>Shaheed Singh:</strong> Martyr warrior (Power: 3)</li>
+                            <li><strong>Akali Warrior:</strong> Immortal warrior (Power: 3)</li>
+                            <li><strong>Gursikh Warrior:</strong> Devoted follower of the Guru's path (Power: 2)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Weapons:</strong> Equip these to warriors to increase their power:
+                        <ul>
+                            <li><strong>Kirpan:</strong> Ceremonial sword (+2 power)</li>
+                            <li><strong>Khanda:</strong> Double-edged sword (+3 power)</li>
+                            <li><strong>Chakkar:</strong> Throwing weapon (+1 power)</li>
+                            <li><strong>Nagni Barcha:</strong> Long spear with wavy blade (+4 power)</li>
+                            <li><strong>Dhal Shield:</strong> Traditional shield (+1 power)</li>
+                            <li><strong>Teer Kaman:</strong> Bow and arrows (+2 power)</li>
+                            <li><strong>Bhala:</strong> Long spear (+3 power)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="instructions-section">
+                <h3>Game Mechanics</h3>
+                <ol>
+                    <li><strong>Energy:</strong> You have 5 energy per turn to play cards.</li>
+                    <li><strong>Playing Cards:</strong> Click on warrior cards to play them directly to your field.</li>
+                    <li><strong>Equipping Weapons:</strong> Click on a weapon card, then click on a warrior to equip it. You can click the weapon again to unselect it if you change your mind.</li>
+                    <li><strong>Weapon Indicators:</strong> Equipped weapons are shown as small icons on the warrior card.</li>
+                    <li><strong>Recalling Cards:</strong> Click the recall button (↩) on a field card to return it to your hand and refund its energy cost.</li>
+                    <li><strong>Combat:</strong> At the end of each turn, the side with higher total power wins and earns points.</li>
+                    <li><strong>Turn Limit:</strong> The game lasts for 10 turns. The player with the highest score wins.</li>
+                </ol>
+            </div>
+            
+            <div class="instructions-section">
+                <h3>Controls</h3>
+                <ul>
+                    <li><strong>End Turn:</strong> Resolve combat, discard your hand, and draw new cards.</li>
+                    <li><strong>New Game:</strong> Reset the game and start over.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/cards.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/ui.js"></script>
+</body>
+</html>

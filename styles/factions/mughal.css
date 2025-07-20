@@ -1,0 +1,836 @@
+/* Mughal Empire Card Styles */
+
+.mughal-faction {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cpath fill='%23FF8000' d='M100 20 C60 20 20 60 20 100 C20 140 60 180 100 180 C140 180 180 140 180 100 C180 60 140 20 100 20 Z M100 40 C130 40 160 70 160 100 C160 130 130 160 100 160 C70 160 40 130 40 100 C40 70 70 40 100 40 Z'/%3E%3Cpath fill='%23FF8000' d='M100 0 L100 40 M100 160 L100 200 M0 100 L40 100 M160 100 L200 100'/%3E%3C/svg%3E");
+}
+
+.mughal-warrior-image {
+    background-color: #f8f8f8;
+    background-image: linear-gradient(to bottom, #ffffff, #fff0e0);
+}
+
+.mughal-weapon-image {
+    background-color: #f8f8f8;
+    background-image: linear-gradient(to bottom, #ffffff, #fff0e0);
+}
+
+/* Sowar */
+.sowar-image {
+    position: relative;
+    height: 100%;
+}
+
+.sowar-image .turban {
+    width: 40px;
+    height: 25px;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff8c00;
+    border-radius: 20px 20px 0 0;
+    z-index: 2;
+}
+
+.sowar-image .face {
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #cd853f;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.sowar-image .beard {
+    width: 30px;
+    height: 15px;
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000000;
+    border-radius: 0 0 15px 15px;
+}
+
+.sowar-image .body {
+    width: 35px;
+    height: 40px;
+    position: absolute;
+    top: 55px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff8c00;
+    border-radius: 5px;
+}
+
+.sowar-image .sword {
+    width: 5px;
+    height: 35px;
+    position: absolute;
+    top: 50px;
+    right: 30%;
+    background-color: #c0c0c0;
+    transform: rotate(30deg);
+    z-index: 3;
+}
+
+/* Mansabdar */
+.mansabdar-image {
+    position: relative;
+    height: 100%;
+}
+
+.mansabdar-image .turban {
+    width: 45px;
+    height: 30px;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff8c00;
+    border-radius: 20px 20px 0 0;
+    z-index: 2;
+}
+
+.mansabdar-image .turban::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 15px;
+    background-color: #ffd700;
+    border-radius: 50%;
+}
+
+.mansabdar-image .face {
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #cd853f;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.mansabdar-image .beard {
+    width: 35px;
+    height: 20px;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000000;
+    border-radius: 0 0 15px 15px;
+}
+
+.mansabdar-image .robe {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #800080;
+    border-radius: 5px;
+}
+
+.mansabdar-image .robe::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: #ffd700;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+/* Piyada */
+.piyada-image {
+    position: relative;
+    height: 100%;
+}
+
+.piyada-image .turban {
+    width: 35px;
+    height: 20px;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff8c00;
+    border-radius: 20px 20px 0 0;
+    z-index: 2;
+}
+
+.piyada-image .face {
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #cd853f;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.piyada-image .body {
+    width: 30px;
+    height: 40px;
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff8c00;
+    border-radius: 5px;
+}
+
+.piyada-image .spear {
+    width: 4px;
+    height: 60px;
+    position: absolute;
+    top: 30px;
+    right: 30%;
+    background-color: #8b4513;
+    transform: rotate(10deg);
+    z-index: 3;
+}
+
+/* Zamburak */
+.zamburak-image {
+    position: relative;
+    height: 100%;
+}
+
+.zamburak-image .camel {
+    width: 60px;
+    height: 40px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #cd853f;
+    border-radius: 10px;
+}
+
+.zamburak-image .camel::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 70%;
+    width: 15px;
+    height: 20px;
+    background-color: #cd853f;
+    border-radius: 5px;
+}
+
+.zamburak-image .rider {
+    width: 25px;
+    height: 30px;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff8c00;
+    border-radius: 5px 5px 0 0;
+}
+
+.zamburak-image .turban {
+    width: 25px;
+    height: 15px;
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff8c00;
+    border-radius: 10px 10px 0 0;
+}
+
+.zamburak-image .face {
+    width: 18px;
+    height: 15px;
+    position: absolute;
+    bottom: 55px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #cd853f;
+    border-radius: 5px;
+}
+
+.zamburak-image .gun {
+    width: 25px;
+    height: 8px;
+    position: absolute;
+    bottom: 45px;
+    right: 20%;
+    background-color: #333333;
+    transform: rotate(-10deg);
+    z-index: 3;
+}
+
+/* Ahadis */
+.ahadis-image {
+    position: relative;
+    height: 100%;
+}
+
+.ahadis-image .turban {
+    width: 40px;
+    height: 25px;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #800080;
+    border-radius: 20px 20px 0 0;
+    z-index: 2;
+}
+
+.ahadis-image .face {
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #cd853f;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.ahadis-image .beard {
+    width: 30px;
+    height: 15px;
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000000;
+    border-radius: 0 0 15px 15px;
+}
+
+.ahadis-image .body {
+    width: 40px;
+    height: 45px;
+    position: absolute;
+    top: 55px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffd700;
+    border-radius: 5px;
+}
+
+.ahadis-image .sword {
+    width: 5px;
+    height: 40px;
+    position: absolute;
+    top: 50px;
+    left: 70%;
+    background-color: #c0c0c0;
+    transform: rotate(30deg);
+    z-index: 3;
+}
+
+/* Subahdar */
+.subahdar-image {
+    position: relative;
+    height: 100%;
+}
+
+.subahdar-image .turban {
+    width: 45px;
+    height: 30px;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff8c00;
+    border-radius: 20px 20px 0 0;
+    z-index: 2;
+}
+
+.subahdar-image .face {
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #cd853f;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.subahdar-image .beard {
+    width: 35px;
+    height: 20px;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000000;
+    border-radius: 0 0 15px 15px;
+}
+
+.subahdar-image .robe {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 55px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #008000;
+    border-radius: 5px;
+}
+
+/* Barqandaz */
+.barqandaz-image {
+    position: relative;
+    height: 100%;
+}
+
+.barqandaz-image .turban {
+    width: 35px;
+    height: 20px;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0000cd;
+    border-radius: 20px 20px 0 0;
+    z-index: 2;
+}
+
+.barqandaz-image .face {
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #cd853f;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.barqandaz-image .body {
+    width: 35px;
+    height: 40px;
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #8b4513;
+    border-radius: 5px;
+}
+
+.barqandaz-image .gun {
+    width: 50px;
+    height: 8px;
+    position: absolute;
+    top: 50px;
+    left: 60%;
+    background-color: #8b4513;
+    transform: rotate(30deg);
+    z-index: 3;
+}
+
+/* Silahdar */
+.silahdar-image {
+    position: relative;
+    height: 100%;
+}
+
+.silahdar-image .turban {
+    width: 35px;
+    height: 20px;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff4500;
+    border-radius: 20px 20px 0 0;
+    z-index: 2;
+}
+
+.silahdar-image .face {
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #cd853f;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.silahdar-image .beard {
+    width: 30px;
+    height: 15px;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000000;
+    border-radius: 0 0 15px 15px;
+}
+
+.silahdar-image .body {
+    width: 35px;
+    height: 40px;
+    position: absolute;
+    top: 55px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #b8860b;
+    border-radius: 5px;
+}
+
+.silahdar-image .weapons {
+    width: 40px;
+    height: 10px;
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #c0c0c0;
+    border-radius: 5px;
+}
+
+/* Naqib */
+.naqib-image {
+    position: relative;
+    height: 100%;
+}
+
+.naqib-image .turban {
+    width: 35px;
+    height: 20px;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    border-radius: 20px 20px 0 0;
+    z-index: 2;
+}
+
+.naqib-image .face {
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #cd853f;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.naqib-image .body {
+    width: 30px;
+    height: 40px;
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #daa520;
+    border-radius: 5px;
+}
+
+.naqib-image .flag {
+    width: 20px;
+    height: 30px;
+    position: absolute;
+    top: 20px;
+    left: 70%;
+    background-color: #008000;
+    z-index: 3;
+}
+
+/* Talwar */
+.talwar-image {
+    position: relative;
+    height: 100%;
+}
+
+.talwar-image .blade {
+    width: 50px;
+    height: 10px;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-25%) rotate(20deg);
+    background-color: #c0c0c0;
+    border-radius: 0 50% 0 0;
+}
+
+.talwar-image .handle {
+    width: 15px;
+    height: 25px;
+    position: absolute;
+    top: 60px;
+    left: 30%;
+    background-color: #8b4513;
+    border-radius: 5px;
+}
+
+.talwar-image .pommel {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 85px;
+    left: 32%;
+    background-color: #ffd700;
+    border-radius: 50%;
+}
+
+/* Katar */
+.katar-image {
+    position: relative;
+    height: 100%;
+}
+
+.katar-image .blade {
+    width: 10px;
+    height: 40px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #c0c0c0;
+}
+
+.katar-image .handle {
+    width: 30px;
+    height: 20px;
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #8b4513;
+    border-radius: 5px;
+}
+
+.katar-image .handle::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 10px;
+    background-color: #ffd700;
+    border-radius: 5px;
+}
+
+/* Toradar */
+.toradar-image {
+    position: relative;
+    height: 100%;
+}
+
+.toradar-image .barrel {
+    width: 60px;
+    height: 8px;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333333;
+    border-radius: 5px;
+}
+
+.toradar-image .barrel::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: 10%;
+    width: 10px;
+    height: 18px;
+    background-color: #ffd700;
+    border-radius: 5px;
+}
+
+.toradar-image .stock {
+    width: 30px;
+    height: 15px;
+    position: absolute;
+    top: 48px;
+    left: 35%;
+    background-color: #8b4513;
+    border-radius: 5px;
+}
+
+.toradar-image .stock::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 5px;
+    background-color: #ffd700;
+    border-radius: 5px;
+}
+
+/* Shamshir */
+.shamshir-image {
+    position: relative;
+    height: 100%;
+}
+
+.shamshir-image .blade {
+    width: 55px;
+    height: 10px;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-25%) rotate(20deg);
+    background-color: #c0c0c0;
+    border-radius: 0 50% 0 0;
+}
+
+.shamshir-image .handle {
+    width: 15px;
+    height: 25px;
+    position: absolute;
+    top: 60px;
+    left: 30%;
+    background-color: #8b4513;
+    border-radius: 5px;
+}
+
+.shamshir-image .pommel {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 85px;
+    left: 32.5%;
+    background-color: #ffd700;
+    border-radius: 50%;
+}
+
+/* Dhal Shield */
+.dhal-image {
+    position: relative;
+    height: 100%;
+}
+
+.dhal-image .shield-body {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #8b4513;
+    border-radius: 50%;
+}
+
+.dhal-image .shield-center {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffd700;
+    border-radius: 50%;
+}
+
+.dhal-image .shield-decoration {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 2px solid #ffd700;
+    border-radius: 50%;
+}
+
+/* Kaman Bow */
+.kaman-image {
+    position: relative;
+    height: 100%;
+}
+
+.kaman-image .bow-body {
+    width: 10px;
+    height: 80px;
+    position: absolute;
+    top: 10px;
+    left: 40%;
+    background-color: #8b4513;
+    border-radius: 5px;
+    transform: rotate(10deg);
+}
+
+.kaman-image .bow-string {
+    width: 2px;
+    height: 70px;
+    position: absolute;
+    top: 15px;
+    left: 55%;
+    background-color: #ffffff;
+    transform: rotate(10deg);
+}
+
+.kaman-image .arrow {
+    width: 60px;
+    height: 3px;
+    position: absolute;
+    top: 50px;
+    left: 30%;
+    background-color: #8b4513;
+    transform: rotate(10deg);
+}
+
+/* Neza Spear */
+.neza-image {
+    position: relative;
+    height: 100%;
+}
+
+.neza-image .shaft {
+    width: 5px;
+    height: 80px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #8b4513;
+}
+
+.neza-image .head {
+    width: 15px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #c0c0c0;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.neza-image .decoration {
+    width: 15px;
+    height: 10px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff0000;
+    border-radius: 5px;
+}

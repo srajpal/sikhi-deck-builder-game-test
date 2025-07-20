@@ -1,0 +1,272 @@
+/* Main styles for Empire Warriors deck building game */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    color: #003366;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Forest background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='200' viewBox='0 0 100 200'%3E%3Cpath fill='%23003366' d='M30 40 L50 0 L70 40 L60 40 L75 70 L65 70 L80 100 L20 100 L35 70 L25 70 L30 40'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='200' viewBox='0 0 120 200'%3E%3Cpath fill='%23003366' d='M40 50 L60 0 L80 50 L70 50 L85 80 L75 80 L90 120 L30 120 L45 80 L35 80 L40 50'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='160' viewBox='0 0 80 160'%3E%3Cpath fill='%23003366' d='M20 30 L40 0 L60 30 L50 30 L65 60 L55 60 L70 90 L10 90 L25 60 L15 60 L20 30'/%3E%3C/svg%3E");
+    background-position:
+        0% 100%,
+        20% 100%,
+        80% 100%;
+    background-repeat: repeat-x;
+    background-size:
+        200px 100px,
+        150px 80px,
+        180px 90px;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+/* Utility classes */
+.hidden {
+    display: none;
+}
+
+/* Game container */
+.game-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 5px solid #FF8000;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Header styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #FF8000;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: #FF8000;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.stats {
+    display: flex;
+    gap: 20px;
+}
+
+.player-stats, .game-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 1.1rem;
+}
+
+.score-display {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.controls button {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    background-color: #FF8000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.controls button:hover {
+    background-color: #FF9933;
+    transform: translateY(-2px);
+}
+
+.controls button:active {
+    transform: translateY(1px);
+}
+
+/* Modal styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+
+.close-button:hover {
+    color: #000;
+}
+
+/* Instructions modal */
+.instructions-section {
+    margin-bottom: 20px;
+}
+
+.instructions-section h3 {
+    margin-bottom: 10px;
+    color: #FF8000;
+}
+
+.instructions-section ul, 
+.instructions-section ol {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.instructions-section li {
+    margin-bottom: 5px;
+}
+
+/* Animations */
+@keyframes cardFlip {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes cardEnter {
+    0% { transform: translateY(-20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes cardRemove {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(20px); opacity: 0; }
+}
+
+@keyframes cardShake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes energyRefresh {
+    0% { color: #FF8000; }
+    50% { color: #00CC00; }
+    100% { color: inherit; }
+}
+
+@keyframes powerChange {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); color: #FF8000; }
+    100% { transform: scale(1); }
+}
+
+@keyframes scoreIncrease {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); color: #00CC00; }
+    100% { transform: scale(1); }
+}
+
+@keyframes turnChange {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); color: #FF8000; }
+    100% { transform: scale(1); }
+}
+
+@keyframes combatFlash {
+    0% { box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); }
+    50% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.8); }
+    100% { box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); }
+}
+
+.card-flipping {
+    animation: cardFlip 0.5s ease;
+}
+
+.card-entering {
+    animation: cardEnter 0.5s ease;
+}
+
+.card-removing {
+    animation: cardRemove 0.5s ease;
+}
+
+.card-shaking {
+    animation: cardShake 0.5s ease;
+}
+
+.energy-refreshing {
+    animation: energyRefresh 0.8s ease;
+}
+
+.power-changing {
+    animation: powerChange 0.8s ease;
+}
+
+.score-increasing {
+    animation: scoreIncrease 0.8s ease;
+}
+
+.turn-changing {
+    animation: turnChange 0.8s ease;
+}
+
+.combat-active {
+    animation: combatFlash 0.8s ease infinite;
+}
