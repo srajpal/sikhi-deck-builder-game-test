@@ -71,8 +71,13 @@ class Game {
         this.gameStarted = true;
 
         // Hide the faction selection screen and show the game
-        document.getElementById('faction-selection').classList.add('hidden');
-        document.getElementById('game-container').classList.remove('hidden');
+        const factionSelection = document.getElementById('faction-selection');
+        factionSelection.classList.add('hidden');
+        factionSelection.style.display = 'none';
+        
+        const gameContainer = document.getElementById('game-container');
+        gameContainer.classList.remove('hidden');
+        gameContainer.style.display = 'block';
     }
 
     shuffleDeck() {
@@ -649,8 +654,13 @@ class Game {
             this.gameStarted = false;
 
             // Show the faction selection screen
-            document.getElementById('faction-selection').classList.remove('hidden');
-            document.getElementById('game-container').classList.add('hidden');
+            const factionSelection = document.getElementById('faction-selection');
+            factionSelection.classList.remove('hidden');
+            factionSelection.style.display = 'block';
+            
+            const gameContainer = document.getElementById('game-container');
+            gameContainer.classList.add('hidden');
+            gameContainer.style.display = 'none';
 
             // Hide any open deck previews
             document.querySelectorAll('.deck-preview').forEach(preview => {
@@ -777,11 +787,14 @@ function resetUIState() {
     });
 
     // Show faction selection screen
-    document.getElementById('faction-selection').classList.remove('hidden');
-    document.getElementById('faction-selection').style.display = 'block';
+    const factionSelection = document.getElementById('faction-selection');
+    factionSelection.classList.remove('hidden');
+    factionSelection.style.display = 'block';
 
     // Hide game container
-    document.getElementById('game-container').classList.add('hidden');
+    const gameContainer = document.getElementById('game-container');
+    gameContainer.classList.add('hidden');
+    gameContainer.style.display = 'none';
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -800,8 +813,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // Show confirmation dialog
         if (confirm('Are you sure you want to quit the current game?')) {
             // Hide game container and show faction selection
-            document.getElementById('game-container').classList.add('hidden');
-            document.getElementById('faction-selection').classList.remove('hidden');
+            const gameContainer = document.getElementById('game-container');
+            gameContainer.classList.add('hidden');
+            gameContainer.style.display = 'none';
+            
+            const factionSelection = document.getElementById('faction-selection');
+            factionSelection.classList.remove('hidden');
+            factionSelection.style.display = 'block';
 
             // Reset the game
             gameInstance.resetGame(true);

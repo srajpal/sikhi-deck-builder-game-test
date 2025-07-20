@@ -41,7 +41,7 @@ body::before {
 
 /* Utility classes */
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 /* Game container */
@@ -134,7 +134,7 @@ body::before {
 }
 
 .modal.hidden {
-    display: none;
+    display: none !important;
 }
 
 .modal-content {
@@ -269,4 +269,15 @@ body::before {
 
 .combat-active {
     animation: combatFlash 0.8s ease infinite;
+}/* Ensure g
+ame container and faction selection don't overlap */
+#game-container, #faction-selection {
+    position: relative;
+    width: 100%;
+}
+
+#game-container.hidden, #faction-selection.hidden {
+    position: absolute;
+    visibility: hidden;
+    z-index: -1;
 }
